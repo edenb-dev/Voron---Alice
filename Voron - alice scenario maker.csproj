@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Voron___alice_scenario_maker</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	<EnablePreviewFeatures>true</EnablePreviewFeatures>
+	<RequiresPreviewFeatureAttribute>true</RequiresPreviewFeatureAttribute>
+
+	<NoWarn>$(NoWarn);CA2252</NoWarn>
+</PropertyGroup>
+
+<ItemGroup>
+	<Compile Remove="Scenarios\Extracted\**" />
+	<EmbeddedResource Remove="Scenarios\Extracted\**" />
+	<None Remove="Scenarios\Extracted\**" />
+</ItemGroup>
+
+
+
+<ItemGroup>
+	<Reference Include="Sparrow">
+		<HintPath>.\libs\Sparrow.dll</HintPath>
+	</Reference>
+	<Reference Include="Sparrow.Server">
+		<HintPath>.\libs\Sparrow.Server.dll</HintPath>
+	</Reference>
+	<Reference Include="Voron">
+		<HintPath>.\libs\Voron.dll</HintPath>
+	</Reference>
+</ItemGroup>
+
+
+
+<ItemGroup>
+	<Content Include=".\libs\librvnpal.win.x64.dll">
+		<Link>librvnpal.win.x64.dll</Link>
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
+	<Content Include=".\libs\libsodium.win.x64.dll">
+		<Link>libsodium.win.x64.dll</Link>
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
+	<Content Include=".\libs\libzstd.win.x64.dll">
+		<Link>libzstd.win.x64.dll</Link>
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
+</ItemGroup>
+
+</Project>
